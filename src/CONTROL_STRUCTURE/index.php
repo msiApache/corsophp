@@ -1,6 +1,6 @@
 <?php
 
-$show = false;
+$show = true;
 
 if ($show) {
 
@@ -38,7 +38,7 @@ if ($show) {
     }
 
     $money2 = 10;
-    echo '<br><br></br>money2 = ' . $money2 . '€';
+    echo '<br><br>money2 = ' . $money2 . '€';
     echo '<br>utilizza if else e elseif con l\'html:';
     echo '<br> ($money2 <= 10) : puoi comprare una pizza ? puoi andare al ristorante';
     if ($money2 <= 10): ?>
@@ -77,74 +77,147 @@ if ($show) {
     }
 
     /**STRUTTURE DI CONTROLLO:  while do-while*/
-
-}
-
-echo '<br>while: "mentre esegue la condizione se non è vera non la esegue": ';
-$i = 1;
-while ($i <= 10) {
-    echo '<br>' . $i;
-    $i++;
-}
-
-echo '<br><br>do-while: "esegue la condizione almeno una volta prima di verificarla": ';
-do {
-    echo '<br>' . $i;
-    $i++;
-} while ($i <= 10);
-
-$arr = ['red', 'blue', 'green', 'yellow'];
-$total = count($arr);
-$i = 0;
-
-echo '<br><br>ciclare un array con il while:';
-while ($i < $total) {
-    echo '<li>' . $arr[$i] . '</li>';
-    $i++;
-}
-
-echo '<br><br>ciclare un array con il for: ';
-$total = count($arr);
-for ($i = 0; $i < $total; $i++) {
-    echo '<li>' . $arr[$i] . '</li>';
-}
-
-echo '<br><br>ciclo for numeri da 1 a 10: ';
-for ($i = 1; $i <= 10; $i++) {
-    echo '<li>' . $i . '</li>';
-}
-
-echo '<br><br>ciclo for numeri da 1 a 10 con condizione :';
-echo '<br>if ($i > 5 ){ ';
-echo '<br>break;  ';
-echo '<br>}';
-
-for ($i = 1; $i <= 10; $i++) {
-    if ($i > 5) {
-        break;
+    echo '<br>while: "mentre esegue la condizione se non è vera non la esegue": ';
+    $i = 1;
+    while ($i <= 10) {
+        echo '<br>' . $i;
+        $i++;
     }
-    echo '<li>' . $i . '</li>';
-}
 
-echo '<br><br>ciclo for numeri da 1 a 5 ripetuto per 3 volte :';
-echo '<br>for ($y = 0; $y > 3; $y++) {';
-echo '<br>for interno che cilca i numeri da 1 a 5';
-echo '<br>}';
-for ($y = 0; $y < 3; $y++) {
-    for ($i = 1; $i <= 5; $i++) {
+    echo '<br><br>do-while: "esegue la condizione almeno una volta prima di verificarla": ';
+    do {
+        echo '<br>' . $i;
+        $i++;
+    } while ($i <= 10);
+
+    $arr = ['red', 'blue', 'green', 'yellow', 'pink'];
+    $total = count($arr);
+    $i = 0;
+
+    echo '<br><br>ciclare un array con il while:';
+    while ($i < $total) {
+        echo '<li>' . $arr[$i] . '</li>';
+        $i++;
+    }
+
+    echo '<br><br>ciclare un array con il for: ';
+    $total = count($arr);
+    for ($i = 0; $i < $total; $i++) {
+        echo '<li>' . $arr[$i] . '</li>';
+    }
+
+    echo '<br><br>ciclare un array con il for e ripetere il contenuro dell\'array per 3 volte inserendo un secondo for esterno: ';
+    echo '<br>for ($y = 0; $y > 3; $y++) {';
+    echo '<br>for che si cicla l\'array';
+    echo '<br>}';
+    for ($j = 0; $j < 3; $j++) {
+        for ($i = 0, $tot = count($arr); $i < $tot; $i++) {
+            if ($i == 4) {
+                $hr = '<hr>';
+            } else {
+                $hr = '';
+            }
+            echo "<li> $arr[$i]$hr</li>";
+        }
+    }
+
+    echo '<br><br>ciclo for numeri da 1 a 10: ';
+    for ($i = 1; $i <= 10; $i++) {
         echo '<li>' . $i . '</li>';
     }
-}
 
-echo '<br><br>ciclare un array con il foreach: ';
-foreach ($arr as $rows) {
-    echo '<li>' . $rows . '</li>';
+    echo '<br><br>ciclo for numeri da 1 a 10 con condizione :';
+    echo '<br>if ($i > 5 ){ ';
+    echo '<br>break;  ';
+    echo '<br>}';
+
+    for ($i = 1; $i <= 10; $i++) {
+        if ($i > 5) {
+            break;
+        }
+        echo '<li>' . $i . '</li>';
+    }
+
+    echo '<br><br>ciclo for numeri da 1 a 5 ripetuto per 3 volte :';
+    echo '<br>for ($y = 0; $y > 3; $y++) {';
+    echo '<br>for interno che cilca i numeri da 1 a 5';
+    echo '<br>}';
+    for ($y = 0; $y < 3; $y++) {
+        for ($i = 1; $i <= 5; $i++) {
+            echo "<li>$i</li>";
+        }
+    }
+
+    echo '<br><br>ciclo for numeri da 1 a 5 ripetuto per 3 volte :';
+    echo '<br>for ($y = 0; $y > 3; $y++) {';
+    echo '<br>for interno che cilca i numeri da 1 a 5';
+    echo '<br>}';
+    for ($y = 0; $y < 3; $y++) {
+        for ($i = 1; $i <= 5; $i++) {
+            if ($i > 4) {
+                $br = '<br><br>';
+            } else {
+                $br = '';
+            }
+            echo "<li>$i $br</li>";
+        }
+    }
+
+    echo '<br><br>ciclare un array con il foreach: ';
+    foreach ($arr as $rows) {
+        echo '<li>' . $rows . '</li>';
+    }
+
+
+    echo '<br><br>foreach di un array chiave valore : ';
+    $arr2 = ['rosso' => 'red', 'blu' => 'blue', 'verde' => 'green', 'giallo' => 'yellow', 'rosa' => 'pink'];
+    foreach ($arr2 as $key => $value) {
+        $h2O = '<h2>';
+        $h2C = '</h2>';
+        echo "$h2O $key --> $value<br> $h2C";
+    }
 }
+### INSERIRE QUI IL CODICE SUCCESSIVO :
+
+
 ?>
+<ul>
+    <?php
+    if ($show) {
+        for ($i = 0; $i <= 5; $i++) {
+            for ($j = 0; $j <= 10; $j++) {
+                echo "$i x $j =" . ($j * $i) . '<br>';
+                if ($j == 10) {
+                    echo '<hr>';
+                }
+            }
+        }
+    }
+    ?>
+</ul>
+<div class="col">
+    <?php
+    if ($show) {
+        for ($i = 0; $i <= 5; $i++) {
+            for ($j = 0; $j <= 10; $j++) {
+                echo "$i x $j =" . ($j * $i) . '<br>';
+            }
+        }
+    }
+    ?>
+</div>
+
 <style>
     ul {
         background: #c0c0c0;
         color: #000;
         font-size: 24px;
     }
+
+    .col {
+        column-count: 6;
+        text-align: justify;
+        column-rule: 3px outset #54045d;
+    }
 </style>
+

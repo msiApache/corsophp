@@ -5,8 +5,16 @@
     <meta charset="UTF-8">
 </head>
 <body>
-
+<?php
+$name = 'INTRO';
+$isShow = false;
+if ($isShow) {
+    echo "<h1>$name</h1>";
+} else {
+    echo "";
+}
+?>
 </body>
 </html>
 
-<?= '<h1>Hello world</h1>' ?>
+<?= '<h2>Hello world</h2>' ?>
